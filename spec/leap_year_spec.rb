@@ -2,11 +2,11 @@
 require 'leap_year'
 
 describe '#calculator' do
-  it 'checks if the year is a leap year' do
-    expect(calculator(2020)).to eq "It's a leap year."
+  it 'checks if the year is divisible 400' do
+    expect(calculator(2000)).to eq "It's a leap year."
   end
 
-  it 'checks if the year is a common year ' do
-    expect(calculator(2018)).to eq "It's a common year."
+  it 'checks if the year is divisible by 100 but not by 400 ' do
+    expect(calculator(2100)).to eq "It's a common year."
   end
 end
