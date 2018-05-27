@@ -7,6 +7,11 @@ describe '#calculator' do
     expect { calculator("ducks") }.to raise_error("Please enter a valid year!")
   end
 
+  it 'raises an error if user input is negative' do
+    expect { calculator(-1988) }.to raise_error("Please enter a valid year!")
+  end
+
+
   it 'checks if the year is divisible 400' do
     expect(calculator(2000)).to eq "It's a leap year."
   end
