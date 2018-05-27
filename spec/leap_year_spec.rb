@@ -2,6 +2,11 @@
 require 'leap_year'
 
 describe '#calculator' do
+
+  it 'raises an error if user input is not an integer' do
+    expect { calculator("ducks") }.to raise_error("Please enter a valid year!")
+  end
+
   it 'checks if the year is divisible 400' do
     expect(calculator(2000)).to eq "It's a leap year."
   end
