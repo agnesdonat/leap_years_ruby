@@ -3,9 +3,16 @@ require 'leap_year'
 
 describe LeapYear do
 
-subject {LeapYear.new(stdout_mock, stdin_mock)}
-let(:stdout_mock) { double() }
-let(:stdin_mock) { double() }
+  subject {LeapYear.new(stdout_mock, stdin_mock)}
+  let(:stdout_mock) { double() }
+  let(:stdin_mock) { double() }
+
+  context "#prompt" do
+    it 'asks the user to select a year' do
+      allow(stdout_mock).to receive(:write) {"Select a year"}
+      subject.prompt
+    end
+  end
 
   context '#calculator' do
     it 'raises an error if user input is not an integer' do
