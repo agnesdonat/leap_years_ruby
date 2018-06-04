@@ -14,6 +14,13 @@ describe LeapYear do
     end
   end
 
+  context "#select" do
+    it 'takes user input' do
+      allow(stdin_mock).to receive(:read).and_return "2016"
+      expect(subject.select).to eq "2016"
+    end
+  end
+
   context '#calculator' do
     it 'raises an error if user input is not an integer' do
       expect { subject.calculator("ducks") }.to raise_error("Please enter a valid year!")
