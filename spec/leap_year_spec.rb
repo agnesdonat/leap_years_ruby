@@ -1,9 +1,13 @@
 # Write an app that will take a number and tell you if it is a leap year.
 require 'leap_year'
 
- describe LeapYear do
- 
-  describe '#calculator' do
+describe LeapYear do
+
+subject {LeapYear.new(stdout_mock, stdin_mock)}
+let(:stdout_mock) { double() }
+let(:stdin_mock) { double() }
+
+  context '#calculator' do
     it 'raises an error if user input is not an integer' do
       expect { subject.calculator("ducks") }.to raise_error("Please enter a valid year!")
     end

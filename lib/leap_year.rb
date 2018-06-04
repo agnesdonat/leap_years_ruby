@@ -1,5 +1,9 @@
-
 class LeapYear
+
+  def initialize(std_out = $stdout, std_in = $stdin)
+    @std_out = std_out
+    @std_in = std_in
+  end
 
   def calculator(year)
     raise "Please enter a valid year!" unless (year.is_a? Integer) && (year > 0)
